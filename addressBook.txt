@@ -58,3 +58,24 @@ mysql> describe addressbook;
 | email       | varchar(30)  | NO   |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.03 sec)
+
+
+UC3: Insert data into table
+
+mysql> insert into addressbook (firstName,lastName,address,city,state,zip,phoneNumber,email) values
+    -> ('suraj','waichale','latur','latur','maharashtra',413512,8080808,'suraj@gamil.com'),
+    ->  ('kiran','patil','Ambegaon','pune','maharashtra',411046,9090909,'kiran@gamil.com'),
+    ->  ('prafull','bansode','latur','latur','maharashtra',413512,6060606,'prafull@gamil.com');
+Query OK, 3 rows affected (0.25 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from addressbook
+    -> ;
++-----------+----------+----------+-------+-------------+--------+-------------+-------------------+
+| firstName | lastName | address  | city  | state       | zip    | phoneNumber | email             |
++-----------+----------+----------+-------+-------------+--------+-------------+-------------------+
+| suraj     | waichale | latur    | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com   |
+| kiran     | patil    | Ambegaon | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com   |
+| prafull   | bansode  | latur    | latur | maharashtra | 413512 |     6060606 | prafull@gamil.com |
++-----------+----------+----------+-------+-------------+--------+-------------+-------------------+
+3 rows in set (0.09 sec)
