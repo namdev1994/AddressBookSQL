@@ -79,3 +79,20 @@ mysql> select * from addressbook
 | prafull   | bansode  | latur    | latur | maharashtra | 413512 |     6060606 | prafull@gamil.com |
 +-----------+----------+----------+-------+-------------+--------+-------------+-------------------+
 3 rows in set (0.09 sec)
+
+
+UC4:Edit EXisting contact as per there name
+
+mysql> update addressbook set address='katraj' where firstName= 'kiran';
+Query OK, 1 row affected (0.14 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+---------+-------+-------------+--------+-------------+-------------------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email             |
++-----------+----------+---------+-------+-------------+--------+-------------+-------------------+
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com   |
+| kiran     | patil    | katraj  | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com   |
+| prafull   | bansode  | latur   | latur | maharashtra | 413512 |     6060606 | prafull@gamil.com |
++-----------+----------+---------+-------+-------------+--------+-------------+-------------------+
+3 rows in set (0.03 sec)
