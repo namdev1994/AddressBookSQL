@@ -111,3 +111,14 @@ mysql> select * from addressbook;
 | kiran     | patil    | katraj  | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com |
 +-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
 2 rows in set (0.00 sec)
+
+UC6: retrive person belongs to city or state
+
+mysql> select * from addressbook where city ='latur' and state='maharashtra';
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email           |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+1 row in set (0.00 sec)
+
