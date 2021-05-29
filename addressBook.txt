@@ -96,3 +96,18 @@ mysql> select * from addressbook;
 | prafull   | bansode  | latur   | latur | maharashtra | 413512 |     6060606 | prafull@gamil.com |
 +-----------+----------+---------+-------+-------------+--------+-------------+-------------------+
 3 rows in set (0.03 sec)
+
+
+UC5: ability to delete person using person name
+
+mysql> delete from addressbook where firstname='prafull';
+Query OK, 1 row affected (0.17 sec)
+
+mysql> select * from addressbook;
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email           |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com |
+| kiran     | patil    | katraj  | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+2 rows in set (0.00 sec)
