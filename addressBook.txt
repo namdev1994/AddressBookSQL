@@ -122,3 +122,12 @@ mysql> select * from addressbook where city ='latur' and state='maharashtra';
 +-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
 1 row in set (0.00 sec)
 
+
+UC7:size of addressbook by city and state
+
+mysql> select count(city),count(state) from addressbook;
++-------------+--------------+
+| count(city) | count(state) |
++-------------+--------------+
+|           2 |            2 |
++-------------+--------------+
