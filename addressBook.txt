@@ -145,3 +145,45 @@ mysql> select * from addressbook where city = 'latur' order by firstName asc;
 +-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
 2 rows in set (0.04 sec)
 
+UC9:UC9: Identify each addressbook by name and type
+
+mysql> ALTER TABLE addressbook ADD Type CHAR(100) AFTER email;
+Query OK, 0 rows affected (2.58 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update addressbook set Type = 'Family' where firstName = 'suraj';
+Query OK, 1 row affected (0.81 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+--------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email           | Type   |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+--------+
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com | Family |
+| kiran     | patil    | katraj  | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com | NULL   |
+| amar      | katare   | latur   | latur | maharashtra | 123456 |     1234567 | amar@gmail.com  | NULL   |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+--------+
+3 rows in set (0.00 sec)
+
+mysql>  update addressbook set Type = 'Friends' where firstName='kiran' or firstName='amar';
+Query OK, 2 rows affected (0.13 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from addressbook;
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+---------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email           | Type    |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+---------+
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com | Family  |
+| kiran     | patil    | katraj  | pune  | maharashtra | 411046 |     9090909 | kiran@gamil.com | Friends |
+| amar      | katare   | latur   | latur | maharashtra | 123456 |     1234567 | amar@gmail.com  | Friends |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+---------+
+3 rows in set (0.10 sec)
+
+mysql> select firstName,lastName from addressbook where Type = 'Friends';
++-----------+----------+
+| firstName | lastName |
++-----------+----------+
+| kiran     | patil    |
+| amar      | katare   |
++-----------+----------+
+2 rows in set (0.00 sec)
