@@ -131,3 +131,17 @@ mysql> select count(city),count(state) from addressbook;
 +-------------+--------------+
 |           2 |            2 |
 +-------------+--------------+
+
+
+UC8: Retrive entries sorted alphabetically
+
+
+mysql> select * from addressbook where city = 'latur' order by firstName asc;
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| firstName | lastName | address | city  | state       | zip    | phoneNumber | email           |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+| amar      | katare   | latur   | latur | maharashtra | 123456 |     1234567 | amar@gmail.com  |
+| suraj     | waichale | latur   | latur | maharashtra | 413512 |     8080808 | suraj@gamil.com |
++-----------+----------+---------+-------+-------------+--------+-------------+-----------------+
+2 rows in set (0.04 sec)
+
